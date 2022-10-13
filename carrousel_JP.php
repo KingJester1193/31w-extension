@@ -9,7 +9,18 @@ Plugin name: carrousel_JP
 */
 
 function genere_boite(){
-    $contenu = "<div class='carrousel'>carrousel</div>";
+    $contenu = "
+    <style> 
+        .carrousel{
+            border:2px solid black;
+            background-color: green;
+            width: 200px;
+            height:300px;
+
+        }
+
+    </style>
+    <div class='carrousel'>carrousel</div>";
 
     return $contenu;
 }
