@@ -45,7 +45,11 @@ add_action("wp_enqueue_scripts", "jpc_enqueue");
 
 function genere_boite(){
     $contenu = "
-    <div class='carrousel'>carrousel </div>";
+    <button class='btn_modal'>open modal</button>
+    <div class='carrousel'>carrousel
+    <button class='btn_fermer--modal'>X</button>
+     </div>";
+
 
     return $contenu;
 }

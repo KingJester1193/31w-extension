@@ -1,5 +1,26 @@
 .carrousel{
+    position: absolute;
+    top:25vw;
+    left:25vw;
     width: 300px;
     height: 400px;
     background-color: steelblue;
+    transform: scale(0);
+    transition: transform 0.6s;
+
+}
+
+.carrousel.carrousel--ouvrir{
+    transform: scale(1);
+}
+
+.btn_fermer--modal{
+    display: flex;
+   justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width:2rem;
+    height: 2rem;
+
 }
