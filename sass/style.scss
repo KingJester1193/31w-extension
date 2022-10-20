@@ -18,12 +18,20 @@
 .btn_fermer--modal{
     display: flex;
    justify-content: center;
+   align-items: center;
     position: absolute;
     right: 0;
     top: 0;
     width:2rem;
     height: 2rem;
     z-index: 10;
+    background-color: orangered;
+    color: blue;
+    margin-right: 5px;
+    margin-top: 5px;
+    border-radius: 50%;
+    font-weight: bolder;
+    border: 2px solid blue;
 
 }
 
@@ -62,11 +70,51 @@
    
 }
 .carrousel__form {
-
+//-------CSS for "hiding the native radio input"-----------------------
     input{
-          margin-left: 25px;
-          margin-bottom: 15px;
+        display: grid;
+        place-content: center;
+         /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+
+  margin-left: 25px;
+  margin-bottom: 15px;
+
+//-----------------------CSS for "improve input vs. label alignment"--------------------------
+  font: inherit;
+  color: orange;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid purple ;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
 
     }
+
+    input[type="radio"]::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em orange;
+        background-color: purple;
+      }
+      input[type="radio"]:checked::before {
+        transform: scale(1);
+      }
+      input[type="radio"]:focus {
+        outline: max(2px, 0.15em) solid red;
+        outline-offset: max(2px, 0.15em) ;
+      }
+      .form-control:focus-within {
+        color: orange;
+      }
   
 }
