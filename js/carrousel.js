@@ -12,16 +12,26 @@
 
     // Etape 1 parcourrire gallery----------------------------------------
         for(const elImg of elGalerie__img){
-            console.log(elImg.getAttribute("src"));
+      
             ajouter_img_carrousel(elImg)
             ajouter_btn_radio()
+            elImg.addEventListener("click",function(){//ecouteur sur img galerie
 
-        
+                console.log(this.dataset.index);
+                elCarrousel.classList.add("carrousel--ouvrir");
+                 elCarrousel__figure.children[this.dataset.index].classList.add("carrousel__figure__img--activer"); 
+                 elCarrousel__form.children[this.dataset.index].checked = true;
+                 pastIndex = this.dataset.index; 
+                  })
+                
+         
         }
+
+
 
         //---------------ajout img a carrousel--------------------------------
         function ajouter_img_carrousel(elImg){
-            
+            elImg.dataset.index = index;
             let elCarrousel__figure__img = document.createElement("img")
             elCarrousel__figure__img.setAttribute("src", elImg.getAttribute("src"))
             elCarrousel__figure__img.classList.add("carrousel__figure__img")
@@ -50,29 +60,30 @@
                 console.log(this.dataset.index)
 
                 //condition a mettre ici
+
+                if(pastIndex != -1){
+                    elCarrousel__figure.children[pastIndex].classList.remove("carrousel__figure__img--activer")
+                }
                 
-                elCarrousel__figure.children[this.dataset.index].classList.add("carrousel__figure__img--activer")
+                elCarrousel__figure.children[this.dataset.index].classList.add("carrousel__figure__img--activer");
 
-
+                pastIndex = this.dataset.index;
             })
-
-
-        }
-
+         }
 
 
 
 
-        elBtnModal.addEventListener("mousedown", function(){
-        console.log("mousedown");
-        elCarrousel.classList.add("carrousel--ouvrir");
 
 
-    })
+
 
     elBtnModalFermer.addEventListener("mousedown", function(){
         console.log("mousedown");
         elCarrousel.classList.remove("carrousel--ouvrir");
+        if(pastIndex != -1){
+            elCarrousel__figure.children[pastIndex].classList.remove("carrousel__figure__img--activer")
+        }
 
 
     })
