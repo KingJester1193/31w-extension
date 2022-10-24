@@ -96,4 +96,61 @@
 }
 .carrousel__form .form-control:focus-within {
   color: orange;
+}
+
+.carrousel .arrow {
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  z-index: 15;
+}
+
+svg {
+  padding: 5px;
+}
+
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  margin-top: -45px;
+  margin-left: -35px;
+  width: 70px;
+  height: 90px;
+}
+
+.left {
+  left: 5%;
+}
+
+.right {
+  left: 93%;
+}
+
+.left:hover polyline,
+.left:focus polyline {
+  stroke-width: 5;
+  stroke: purple;
+}
+
+.left:active polyline {
+  stroke-width: 8;
+  transition: all 100ms ease-in-out;
+}
+
+.right:hover polyline,
+.right:focus polyline {
+  stroke-width: 5;
+  stroke: purple;
+}
+
+.right:active polyline {
+  stroke-width: 8;
+  transition: all 100ms ease-in-out;
+}
+
+polyline {
+  transition: all 250ms ease-in-out;
+  stroke: orange;
 }/*# sourceMappingURL=style.css.map */
