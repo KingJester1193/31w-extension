@@ -7,8 +7,6 @@ version 1.0.0
 /*
 Plugin name: carrousel_JP
 */
-
-
 // filemtime();  // retourne en milliseconde le temps de la dernière sauvegarde
 // plugin_dir_path(); // retourne le chemin du répertoire du plugin
 // __FILE__ // le fichier en train de s'exécuter

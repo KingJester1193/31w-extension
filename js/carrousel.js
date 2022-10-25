@@ -10,8 +10,10 @@
     let arrowLeft = document.querySelector(".left")
     let arrowRight = document.querySelector(".right")
 
+
     let index = 0;
     let pastIndex = -1;
+    
 
     // Etape 1 parcourrire gallery----------------------------------------
         for(const elImg of elGalerie__img){
@@ -43,15 +45,26 @@
                      imgActivIndex = img_activer.dataset.index
                      console.log(imgActivIndex)
                      console.log(pastIndex);
+                     let nextImg;
  
-                     if(pastIndex != -1){
-                                 img_activer.classList.remove("carrousel__figure__img--activer");
-                    img_activer.previousElementSibling.classList.add("carrousel__figure__img--activer")
+ 
+                     if(imgActivIndex == 0){
+                         nextImg = elGalerie__img.length -1
+ 
+                     }else{
+                         nextImg = parseInt(imgActivIndex) -1;
+                     }
+ 
+ 
+                     img_activer.classList.remove("carrousel__figure__img--activer");
+                  
+                    elCarrousel.querySelector(`[data-index='${nextImg}']`).classList.add("carrousel__figure__img--activer")
+                     document.querySelector(`[type="radio"][data-index='${nextImg}']`).checked = true;
             
+                
+                
 
-                }
-            
-              
+        
             
             })
 
@@ -61,13 +74,27 @@
                     imgActivIndex = img_activer.dataset.index
                     console.log(imgActivIndex)
                     console.log(pastIndex);
+                    let nextImg;
 
-                    if(pastIndex != -1){
-                                img_activer.classList.remove("carrousel__figure__img--activer");
-                   img_activer.nextElementSibling.classList.add("carrousel__figure__img--activer")
+
+                    if(imgActivIndex == elGalerie__img.length - 1){
+                        nextImg = 0;
+
+                    }else{
+                        nextImg = parseInt(imgActivIndex) +1;
+                    }
+
+
+                    img_activer.classList.remove("carrousel__figure__img--activer");
+                 
+                   elCarrousel.querySelector(`[data-index='${nextImg}']`).classList.add("carrousel__figure__img--activer")
+                   
+
+                  
+                   document.querySelector(`[type="radio"][data-index='${nextImg}']`).checked = true;
            
 
-                    }})
+                    })
                 
 
 

@@ -55,10 +55,12 @@
    transition: opacity 1s;
 
 }
+
 .carrousel__figure__img--activer{
     opacity: 1;
 
 }
+
 .carrousel__form{
      display:flex;
     position: absolute;
@@ -66,9 +68,8 @@
     width: 100%;
     z-index:10;
     justify-content: center;
-
-   
 }
+
 .carrousel__form {
 //-------CSS for "hiding the native radio input"-----------------------
     input{
