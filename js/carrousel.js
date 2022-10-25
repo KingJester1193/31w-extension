@@ -92,7 +92,11 @@
 
                   
                    document.querySelector(`[type="radio"][data-index='${nextImg}']`).checked = true;
-           
+                   if(imgActivIndex   !=  elCarrousel__form__radio.dataset.index.checked){
+                    img_activer.classList.remove("carrousel__figure__img--activer");
+                 
+                   }
+
 
                     })
                 
@@ -147,11 +151,6 @@
      
 
          }
-
-    
-
-
-
 
 
     elBtnModalFermer.addEventListener("mousedown", function(){
