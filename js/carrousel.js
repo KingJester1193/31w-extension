@@ -128,25 +128,20 @@
             elCarrousel__form__radio.dataset.index = index;
             index++
             elCarrousel__form.appendChild(elCarrousel__form__radio)
-
+            
              //---------------listener pour changer image--------------------------------
             elCarrousel__form__radio.addEventListener("click",function(){
                 console.log(this.dataset.index)
 
                 //condition a mettre ici
 
-
-                
-
-                if(pastIndex != -1){
-                    
-                    elCarrousel__figure.children[pastIndex].classList.remove("carrousel__figure__img--activer")
-                }
-                
+                let img_activer = document.querySelector(".carrousel__figure__img--activer")
+                img_activer.classList.remove("carrousel__figure__img--activer")
                 elCarrousel__figure.children[this.dataset.index].classList.add("carrousel__figure__img--activer");
 
                 pastIndex = this.dataset.index;
             })
+
 
      
 
